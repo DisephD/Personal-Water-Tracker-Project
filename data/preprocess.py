@@ -12,7 +12,6 @@ data["Time"] = pd.to_datetime(data["Time"]).dt.time
 data["Month"] = data["Date"].dt.month
 data["Day"] = (data["Date"].dt.day).astype("category")
 data["Week"] = data["Date"].dt.isocalendar().week
-data["Week"] = "Week " + data["Week"].astype(str)
 data["Weekday_name"] = data["Date"].dt.strftime('%a')
 
 
