@@ -1,6 +1,6 @@
 import pandas as pd
 
-data = pd.read_csv("drinkWaterApp_data.csv", parse_dates=["Date"])
+data = pd.read_csv("../data/drinkWaterApp_data.csv", parse_dates=["Date"])
 
 data = data[["Date", "Time", "Water(ml)"]]
 
