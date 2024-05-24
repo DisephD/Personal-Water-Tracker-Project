@@ -32,10 +32,10 @@
     <!-- Sidebar -->
     <div class="container-fluid">
         <div class="row">
-            <aside class="col-md-3 bg-white pt-4 pb-1" id="sidebar" style="border-radius: 0 30px 30px 0;">
+            <aside class="col-md-3 bg-white pt-4 pb-1" id="sidebar" >
 
                 <!-- Sidebar Content -->
-                <a href="#" class="brand p-4 d-flex align-items-center justify-content-center text-decoration-none" style="font-size: 24px; font-weight: 680;">
+                <a href="#" class="brand p-4 d-flex align-items-center justify-content-center" style="font-size: 24px; font-weight: 680;">
                         <span class="material-symbols-outlined">water_bottle</span>
                         <span class="text">  Water Intake Dashboard</span>
                 </a>
@@ -89,7 +89,7 @@
 
 
             <!-- Center Section -->
-            <main class="col-md-6 p-10" id="dashboard" style="font-family: 'Lato', sans-serif;">
+            <main class="col-md-6 p-10" id="dashboard" >
                 
                 <!-- Title and Filters -->
                 <div class="title mb-4 d-flex justify-content-between">
@@ -103,7 +103,7 @@
                     </div>
 
                     <div class = "download">
-                        <a href="#" class="download_button d-flex align-items-center justify-content-center">
+                        <a href="#" class="download_button ">
                             <i class='bx bx-cloud-download'></i>
                             <button id="download" type="button" py-click="download_file">Download CSV</button>
                         </a>
@@ -174,8 +174,8 @@
 
 
             <!-- Right Section -->
-            <aside id="right_section" class="col-md-12 col-xl-3 bg-white mt-7 p-1" style="border-radius: 30px 0 0 30px;">
-                <h3 class="text-center m-3 mt-5" style="font-size: 20px;">Target</h3>
+            <aside id="right_section" class="col-md-12 col-xl-3 bg-white mt-7 p-1">
+                <h3 class="text-center m-3 mt-5" >Target</h3>
 
                 <div id="inner_right" class="mb-4 p-1 m-3">
 
@@ -187,9 +187,9 @@
                     <!-- Bar Chart -->
                     <div class="col-md-6 p-2">
                         <div class="text-center align-items-center">
-                            <h4 class="#" style="font-size: 20px;">Weekly Intake</h4>
+                            <h4 class="#">Weekly Intake</h4>
                             <div class="d-flex justify-content-center">
-                                <div class="mr-2 rounded-circle" style="width:14px;height:14px; background-color: rgba(233, 32, 34, 0.645);"></div>
+                                <div id="circle" class="mr-2 rounded-circle"></div>
                                 <p class="font-italic mb-0"> Weekly Target: 14000ml</p>
                             </div>
                         </div>
