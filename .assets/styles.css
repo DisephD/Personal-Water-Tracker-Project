@@ -1,1 +1,114 @@
+:root{
+	--bg-color: #F4F6FA;
+	--blue: #3C91E6;
+	--light-blue: #CFE8FF;
+}
 
+a{
+	text-decoration: none !important;
+}
+
+body {
+	background: var(--bg-color);
+	font-family: sans-serif;
+}
+
+py-config{
+	color: var(--bg-color);
+}
+
+#sidebar{
+	border-radius: 0 30px 30px 0;
+}
+
+#sidebar .brand {
+	color: var(--blue) !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px; 
+	font-weight: 680;
+}
+
+#hey_text {
+	font-weight: 550;
+	font-size: 18px;
+}
+
+#sidebar .side-menu li {
+	height: 60px;
+	border-radius: 20px;
+	border-width: 1px;
+}
+
+.side-menu li a{
+	border-color: #eee;
+	align-items: center;
+	margin: 15px 8px 0px 5px;
+	padding: 2px;
+}
+
+.side-menu li .text{
+	color: var(--blue);
+	margin-left: 7px;
+	font-weight: 550;	
+}
+
+
+#dashboard{
+	font-family: 'Lato', sans-serif;
+}
+.card{
+	border-radius: 12px;
+}
+
+.card-inner{
+	display: flex;
+	justify-content: space-between;
+}
+
+.card h3 {
+	font-size: 19px;
+	font-weight: 550;
+}
+
+.download_button{
+	width: 170px;
+	border-radius: 30px;
+	background: var(--blue);
+	color: var(--light);
+	grid-gap: 10px;
+	font-weight: 500;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#kpis .material-symbols-outlined{
+	background-color: var(--light-blue);
+	color: var(--blue);
+	font-size: 27px;
+	border-radius: 10px;
+}
+
+#right_section{
+	border-radius: 30px 0 0 30px;
+}
+
+#circle{
+	width:14px;
+	height:14px; 
+	background-color: rgba(233, 32, 34, 0.645);
+}
+
+#right-section .h3, .h4{
+	font-size: 20px;
+}
+
+@media only screen and (min-width: 700px) and (max-width:1200px){
+	#inner_right{
+		display: flex !important;
+		justify-content: space-between;
+	}
+}
