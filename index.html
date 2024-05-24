@@ -5,20 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- pyscript css -->
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <!-- pyscript js -->
     <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
-    <!-- Plotly cdn -->
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
-    <!-- Boxicons -->
-	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <!--link to google material design font-->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-	<!-- My CSS -->
-	<link rel="stylesheet" href="styles.css">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>    <!-- Boxicons -->    	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /><!--link to google material design font-->
+	<link rel="stylesheet" href="styles.css"><!-- My CSS -->
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"><!-- Bootstrap CSS -->
 
     <title>Water Dashboard with PyScript</title>
 
@@ -27,13 +20,11 @@
     </py-config>
 </head>
 
-
 <body>
     <!-- Sidebar -->
     <div class="container-fluid">
         <div class="row">
             <aside class="col-md-3 bg-white pt-4 pb-1" id="sidebar" >
-
                 <!-- Sidebar Content -->
                 <a href="#" class="brand p-4 d-flex align-items-center justify-content-center" style="font-size: 24px; font-weight: 680;">
                         <span class="material-symbols-outlined">water_bottle</span>
@@ -90,7 +81,6 @@
 
             <!-- Center Section -->
             <main class="col-md-6 p-10" id="dashboard" >
-                
                 <!-- Title and Filters -->
                 <div class="title mb-4 d-flex justify-content-between">
                     <div class="filters d-flex flex-wrap">
@@ -101,7 +91,6 @@
                             <option value="March">March</option>
                         </select>
                     </div>
-
                     <div class = "download">
                         <a href="#" class="download_button ">
                             <i class='bx bx-cloud-download'></i>
@@ -109,7 +98,6 @@
                         </a>
                     </div>
                 </div>
-
                 <!-- KPI Section -->
                 <div id="kpis" class="row">
                     <div class="col-xl-4 col-mb-4 col-12 mb-3">
@@ -158,7 +146,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Line and Table Section -->
                 <div id="line_and_graph" class="mb-4">
                     <!-- Line Chart -->
@@ -172,18 +159,15 @@
                 </div>
             </main>
 
-
             <!-- Right Section -->
             <aside id="right_section" class="col-md-12 col-xl-3 bg-white mt-7 p-1">
                 <h3 class="text-center m-3 mt-5" >Target</h3>
 
                 <div id="inner_right" class="mb-4 p-1 m-3">
-
                     <!-- Circle Chart -->
                     <div class="col-md-6 p-3">
                         <div id="circle_chart"></div>
                     </div>
-                 
                     <!-- Bar Chart -->
                     <div class="col-md-6 p-2">
                         <div class="text-center align-items-center">
@@ -193,7 +177,6 @@
                                 <p class="font-italic mb-0"> Weekly Target: 14000ml</p>
                             </div>
                         </div>
-
                         <div class="p-3 mt-1">
                             <div id="bar_chart"></div>
                         </div>
@@ -202,7 +185,6 @@
             </aside>
         </div>
     </div>
-    <!-- PyScript -->
-    <py-script output="dashboard" src="./app.py"></py-script>
+	<py-script output="dashboard" src="./app.py"></py-script><!-- PyScript -->
 </body>
 </html>
