@@ -26,52 +26,50 @@
         <div class="row">
             <aside class="col-md-3 bg-white pt-4 pb-1" id="sidebar" >
                 <!-- Sidebar Content -->
-                <a href="#" class="brand p-4 d-flex align-items-center justify-content-center" style="font-size: 24px; font-weight: 680;">
+                <a href="#" class="brand p-4">
                         <span class="material-symbols-outlined">water_bottle</span>
                         <span class="text">  Water Intake Dashboard</span>
                 </a>
-                <div id="sidebar_contents">
-                    <div id="content_1" class="profile align-items-center text-center mb-4">
+                <div>
+                    <div class="align-items-center text-center mb-4">
                         <img src="./blue avatar license free.png" alt="profile image" class="mt-10 p-2 rounded-circle d-inline-block mr-3" style="width:120px;height:120px;">
                         <div>
-                            <p class="h6 mb-1 pt-3 px-2" id="hey_text" style="font-weight: 550;font-size: 18px;">Hey Diseph</p>
-                            <span id="water_2024" class="font-weight-normal">Your water summary 2024</span>
+                            <p class="h6 mb-1 pt-3 px-2" id="hey_text">Hey Diseph</p>
+                            <span class="font-weight-normal">Your water summary 2024</span>
                         </div>
                     </div>
-
                     <!-- Total Stats cards -->
-                    <div id="content_2">
+                    <div>
                         <ul class="side-menu top list-unstyled m-5 mb-0">
-                            <li class="total_stats mt-3 ml-1">
+                            <li class="mt-3 ml-1">
                                 <a href="#" class="d-flex justify-content-between">
                                     <div class="d-flex align-items-center">
                                         <i class='bx bxs-doughnut-chart text'></i>
                                         <span class="text">Total:</span>
                                     </div>
-                                    <span id="all_total" class="num_text text"></span>
+                                    <span id="all_total" class="text"></span>
                                 </a>
                             </li>
-                            <li class="total_stats mt-3 ml-1">
+                            <li class="mt-3 ml-1">
                                 <a href="#" class="d-flex justify-content-between">
                                     <div class="d-flex align-items-center">
                                         <i class='bx bxs-doughnut-chart text'></i>
                                         <span class="text">Highest:</span>
                                     </div>
-                                    <span id="all_highest" class="num_text text"></span>
+                                    <span id="all_highest" class="text"></span>
                                 </a>
                             </li>
-                            <li class="total_stats mt-3 ml-1">
+                            <li class="mt-3 ml-1">
                                 <a href="#" class="d-flex justify-content-between">
                                     <div class="d-flex align-items-center">
                                         <i class='bx bxs-doughnut-chart text'></i>
                                         <span class="text">Average:</span>
                                     </div>
-                                    <span id="all_avg" class="num_text text"></span>
+                                    <span id="all_avg" class="text"></span>
                                 </a>
                             </li>
                         </ul>
-                        
-                        <div class="heat_graph row justify-content-center p-1" id="heat_graph">
+                        <div class="row justify-content-center p-1">
                             <div id="heatmap"></div>
                         </div>
                     </div>
@@ -83,7 +81,7 @@
             <main class="col-md-6 p-10" id="dashboard" >
                 <!-- Title and Filters -->
                 <div class="title mb-4 d-flex justify-content-between">
-                    <div class="filters d-flex flex-wrap">
+                    <div class="d-flex flex-wrap">
                         <label for="filter" class="mr-2">Filter by</label>
                         <select class="filter form-control" id="dropdown_menu" py-change="dropdown_event">
                             <option value="January">January</option>
@@ -91,8 +89,8 @@
                             <option value="March">March</option>
                         </select>
                     </div>
-                    <div class = "download">
-                        <a href="#" class="download_button ">
+                    <div>
+                        <a href="#">
                             <i class='bx bx-cloud-download'></i>
                             <button id="download" type="button" py-click="download_file">Download CSV</button>
                         </a>
@@ -147,13 +145,13 @@
                     </div>
                 </div>
                 <!-- Line and Table Section -->
-                <div id="line_and_graph" class="mb-4">
+                <div class="mb-4">
                     <!-- Line Chart -->
-                    <div id="line_graph" class="line_graph bg-white pl-3">
+                    <div class="bg-white pl-3">
                         <div id="line_chart"></div>
                     </div>
                     <!-- Table -->
-                    <div id="table_graph" class="table_graph bg-white pl-3">
+                    <div class="bg-white pl-3">
                         <div id="table"></div>
                     </div>
                 </div>
@@ -162,7 +160,6 @@
             <!-- Right Section -->
             <aside id="right_section" class="col-md-12 col-xl-3 bg-white mt-7 p-1">
                 <h3 class="text-center m-3 mt-5" >Target</h3>
-
                 <div id="inner_right" class="mb-4 p-1 m-3">
                     <!-- Circle Chart -->
                     <div class="col-md-6 p-3">
