@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- pyscript css -->
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <!-- pyscript js -->
+    <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
+    <!-- Plotly cdn -->
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!--link to google material design font-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+	<!-- My CSS -->
+	<link rel="stylesheet" href="styles.css">
+
+    <title>Water Dashboard with PyScript</title>
+
+    <py-config>
+        packages = ["pandas", "plotly"]
+    </py-config>
+</head>
+
+
+<body>
+    <!-- Sidebar -->
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-md-3 bg-white pt-4 pb-1" id="sidebar" style="border-radius: 0 30px 30px 0;">
+
+                <!-- Sidebar Content -->
+                <a href="#" class="brand p-4 d-flex align-items-center justify-content-center text-decoration-none" style="font-size: 24px; font-weight: 680;">
+                        <span class="material-symbols-outlined">water_bottle</span>
+                        <span class="text">  Water Intake Dashboard</span>
+                </a>
+                <div id="sidebar_contents">
+                    <div id="content_1" class="profile align-items-center text-center mb-4">
+                        <img src="./blue avatar license free.png" alt="profile image" class="mt-10 p-2 rounded-circle d-inline-block mr-3" style="width:120px;height:120px;">
+                        <div>
+                            <p class="h6 mb-1 pt-3 px-2" id="hey_text" style="font-weight: 550;font-size: 18px;">Hey Diseph</p>
+                            <span id="water_2024" class="font-weight-normal">Your water summary 2024</span>
+                        </div>
+                    </div>
+
+                    <!-- Total Stats cards -->
+                    <div id="content_2">
+                        <ul class="side-menu top list-unstyled m-5 mb-0">
+                            <li class="total_stats mt-3 ml-1">
+                                <a href="#" class="d-flex justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <i class='bx bxs-doughnut-chart text'></i>
+                                        <span class="text">Total:</span>
+                                    </div>
+                                    <span id="all_total" class="num_text text"></span>
+                                </a>
+                            </li>
+                            <li class="total_stats mt-3 ml-1">
+                                <a href="#" class="d-flex justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <i class='bx bxs-doughnut-chart text'></i>
+                                        <span class="text">Highest:</span>
+                                    </div>
+                                    <span id="all_highest" class="num_text text"></span>
+                                </a>
+                            </li>
+                            <li class="total_stats mt-3 ml-1">
+                                <a href="#" class="d-flex justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <i class='bx bxs-doughnut-chart text'></i>
+                                        <span class="text">Average:</span>
+                                    </div>
+                                    <span id="all_avg" class="num_text text"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <div class="heat_graph row justify-content-center p-1" id="heat_graph">
+                            <div id="heatmap"></div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+
+            <!-- Center Section -->
+            <main class="col-md-6 p-10" id="dashboard" style="font-family: 'Lato', sans-serif;">
+                
+                <!-- Title and Filters -->
+                <div class="title mb-4 d-flex justify-content-between">
+                    <div class="filters d-flex flex-wrap">
+                        <label for="filter" class="mr-2">Filter by</label>
+                        <select class="filter form-control" id="dropdown_menu" py-change="dropdown_event">
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                        </select>
+                    </div>
+
+                    <div class = "download">
+                        <a href="#" class="download_button d-flex align-items-center justify-content-center">
+                            <i class='bx bx-cloud-download'></i>
+                            <button id="download" type="button" py-click="download_file">Download CSV</button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- KPI Section -->
+                <div id="kpis" class="row">
+                    <div class="col-xl-4 col-mb-4 col-12 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-inner px-md-1">
+                                    <div class="align-self-center">
+                                        <span class="material-symbols-outlined">water_drop</span>
+                                    </div>
+                                    <div class="text-end">
+                                        <p class="mb-0">Total Intake</p> 
+                                        <h3 id="total_water"></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-mb-4 col-12 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-inner px-md-1">
+                                    <div class="align-self-center">
+                                        <span class="material-symbols-outlined">water_full</span>
+                                    </div>
+                                    <div class="text-end">
+                                        <p class="mb-0">Max Intake</p> 
+                                        <h3 id="highest_water"></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-mb=4 col-12 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-inner px-md-1">
+                                    <div class="align-self-center">
+                                        <span class="material-symbols-outlined">water_medium</span>
+                                    </div>
+                                    <div class="text-end">
+                                        <p class="mb-0">Avg Intake</p> 
+                                        <h3 id="avg_water"></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Line and Table Section -->
+                <div id="line_and_graph" class="mb-4">
+                    <!-- Line Chart -->
+                    <div id="line_graph" class="line_graph bg-white pl-3">
+                        <div id="line_chart"></div>
+                    </div>
+                    <!-- Table -->
+                    <div id="table_graph" class="table_graph bg-white pl-3">
+                        <div id="table"></div>
+                    </div>
+                </div>
+            </main>
+
+
+            <!-- Right Section -->
+            <aside id="right_section" class="col-md-12 col-xl-3 bg-white mt-7 p-1" style="border-radius: 30px 0 0 30px;">
+                <h3 class="text-center m-3 mt-5" style="font-size: 20px;">Target</h3>
+
+                <div id="inner_right" class="mb-4 p-1 m-3">
+
+                    <!-- Circle Chart -->
+                    <div class="col-md-6 p-3">
+                        <div id="circle_chart"></div>
+                    </div>
+                 
+                    <!-- Bar Chart -->
+                    <div class="col-md-6 p-2">
+                        <div class="text-center align-items-center">
+                            <h4 class="#" style="font-size: 20px;">Weekly Intake</h4>
+                            <div class="d-flex justify-content-center">
+                                <div class="mr-2 rounded-circle" style="width:14px;height:14px; background-color: rgba(233, 32, 34, 0.645);"></div>
+                                <p class="font-italic mb-0"> Weekly Target: 14000ml</p>
+                            </div>
+                        </div>
+
+                        <div class="p-3 mt-1">
+                            <div id="bar_chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <!-- PyScript -->
+    <py-script output="dashboard" src="./app.py"></py-script>
+</body>
+</html>
