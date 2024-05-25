@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>    <!-- Boxicons -->    	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /><!--link to google material design font-->
@@ -17,10 +17,7 @@
     <title>Water Dashboard with PyScript</title>
 
     <py-config>
-        { 
-            "packages" : ["plotly", "pandas"],
-            "interpreter" : "https://cdn.jsdelivr.net/pyodide/v0.23.2/full/pyodide.mjs"
-        }
+        packages = ["plotly", "pandas"]
     </py-config>
 </head>
 
@@ -87,7 +84,7 @@
                 <div class="title mb-4 d-flex justify-content-between">
                     <div class="d-flex flex-wrap">
                         <label for="filter" class="mr-2">Filter by</label>
-                        <select class="filter form-control" id="dropdown_menu" py-change="dropdown_event">
+                        <select class="filter form-control" id="dropdown_menu" py-change="dropdown_event()">
                             <option value="January">January</option>
                             <option value="February">February</option>
                             <option value="March">March</option>
@@ -96,7 +93,7 @@
                     <div>
                         <a href="#" class="download_button">
                             <i class='bx bx-cloud-download'></i>
-                            <button id="download" type="button" py-click="download_file">Download CSV</button>
+                            <button id="download" type="button" py-click="download_file()">Download CSV</button>
                         </a>
                     </div>
                 </div>
