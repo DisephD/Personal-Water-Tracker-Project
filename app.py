@@ -1,9 +1,9 @@
-from js import Plotly, JSON, Uint8Array, File, URL
+from js import document, JSON, Plotly, File, Uint8Array, URL
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from pyodide.http import open_url
-from pyscript import display, document
+from pyscript import display
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -179,7 +179,7 @@ def plot_charts(selected_month):
 
 
 #create a dropdown event catcher
-def dropdown_event(event):
+def dropdown_event():
     selected_month = document.getElementById("dropdown_menu").value
     plot_charts(selected_month)
 
