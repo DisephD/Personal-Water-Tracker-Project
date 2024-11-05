@@ -67,6 +67,7 @@ Mobile View:
 ![image](/assets/screenshot-3.png)
 
 Desktop View:
+
 ![image](/assets/Water-Dashboard-Desktop.png)
 
 ## Contact
