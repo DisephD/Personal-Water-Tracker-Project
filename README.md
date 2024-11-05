@@ -1,7 +1,7 @@
 # Personal Water Tracker Project
 A fully interactive dashboard created with Python and HTML and styled with CSS. Courtesy of Pyscript.
+![image](/assets/Water-Dashboard-Desktop.png)
 
-## Overview
 This project is a personal water intake tracker that monitors daily water consumption. I tracked my water intake over three months, stored it in an Excel file, and analyzed the data using Python. A real-time dashboard was created using Python, HTML, and Bootstrap CSS, facilitated by the Pyscript framework. A detailed guide on how to recreate this project can be found on my [website](https://diseph.medium.com/python-dashboard-web-app-with-pyscript-2024-9fb7d65c9f25).
 
 ## Table of Contents
@@ -61,7 +61,13 @@ The data analysis provided some key insights into my water intake habits:
 These insights help reinforce the need for consistent hydration, especially after physical activity, and underscore the importance of reliable tracking methods to reduce human error.
 
 ## Images
+Mobile View:
+![image](/assets/Screenshot-1.png)
+![image](/assets/Screenshot-2.png)
+![image](/assets/Screenshot-3.png)
 
+Desktop View:
+![image](/assets/Water-Dashboard-Desktop.png)
 
 ## Contact
 Feel free to reach out with questions or feedback. If via email, use the repository title as the subject.
