@@ -64,7 +64,6 @@ These insights help reinforce the need for consistent hydration, especially afte
 Mobile View:
 ![image](/assets/screenshot-1.png)
 ![image](/assets/screenshot-2.png)
-![image](/assets/screenshot-3.png)
 
 Desktop View:
 
