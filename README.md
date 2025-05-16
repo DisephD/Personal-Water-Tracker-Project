@@ -1,4 +1,4 @@
-# Personal Water Tracker Project
+# Hydration Monitor Dashboard
 A fully interactive dashboard created with Python and HTML and styled with CSS. Courtesy of Pyscript.
 ![image](/assets/Water-Dashboard-Desktop.png)
 
